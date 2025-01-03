@@ -4157,19 +4157,29 @@ input, select, textarea {
 
 /* Estilo para la foto de perfil */
 .profile-photo {
-	position: absolute; /* Colocamos la foto en una posición absoluta */
-	top: 190px; /* Ajusta la posición vertical para que no esté pegada al borde superior */
-	left: 10px; /* Ajusta la posición horizontal a la izquierda */
-	width: 175px; /* Ajusta el tamaño de la foto, más pequeño que 240px */
-	height: 175px; /* Aumenta el tamaño proporcional */
-	border-radius: 50%; /* Hace que la imagen sea un círculo */
-	overflow: hidden;
+    position: absolute;
+    top: 5%; /* Usa porcentaje para ajustar la posición vertical */
+    left: 5%; /* Ajusta la posición horizontal */
+    width: 20%; /* Usa porcentaje para que el tamaño se ajuste al ancho del dispositivo */
+    max-width: 150px; /* Limita el tamaño máximo */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    border-radius: 50%; /* Hace que la imagen sea un círculo */
+    overflow: hidden;
 }
 
 .circle-photo {
-	width: 100%;
-	height: 100%;
-	object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
 }
-  
-  
+
+/* Ajustes para dispositivos pequeños */
+@media screen and (max-width: 736px) {
+    .profile-photo {
+        top: 10%; /* Baja un poco la posición en pantallas más pequeñas */
+        left: 50%; /* Centra la foto */
+        transform: translateX(-50%); /* Centra horizontalmente usando transform */
+        width: 30%; /* Hazla más grande en relación al ancho */
+        max-width: 120px; /* Limita el tamaño máximo */
+    }
+}
