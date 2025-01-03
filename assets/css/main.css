@@ -4176,7 +4176,7 @@ input, select, textarea {
 /* Ajustes para dispositivos pequeños */
 @media screen and (max-width: 736px) {
     .profile-photo {
-        top: 10%; /* Baja un poco la posición en pantallas más pequeñas */
+        top: 50%; /* Baja un poco la posición en pantallas más pequeñas */
         left: 50%; /* Centra la foto */
         transform: translateX(-50%); /* Centra horizontalmente usando transform */
         width: 30%; /* Hazla más grande en relación al ancho */
