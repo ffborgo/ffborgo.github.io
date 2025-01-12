@@ -30,7 +30,6 @@
 
 					<section id="contenedor-experiencia"></section>
 
-
 					<section id="four" class="wrapper alt style1">
 						<div class="inner">
 							 <section class="features">
@@ -130,27 +129,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-				async function loadContent() {
-					try {
-						// Cargar la página exp.html
-						const responseExperiencia = await fetch("exp.html");
-						const experienciaHtml = await responseExperiencia.text();
-						const parser = new DOMParser();
-						const experienciaDoc = parser.parseFromString(experienciaHtml, "text/html");
-			
-						// Seleccionar la primera sección de exp.html
-						const experienciaSeccion = experienciaDoc.querySelector("section").outerHTML;
-						document.getElementById("contenedor-experiencia").innerHTML = experienciaSeccion;
-					} catch (error) {
-						console.error("Error al cargar el contenido:", error);
-					}
-				}
-			
-				// Ejecutar el script al cargar la página principal
-				window.onload = loadContent;
-			</script>			
+			<script src="assets/js/containers.js"></script>		
 			
 	</body>
 </html>
