@@ -28,6 +28,9 @@
 						</div>
 					</section>
 
+					<section id="contenedor-experiencia"></section>
+
+
 					<section id="four" class="wrapper alt style1">
 						<div class="inner">
 							 <section class="features">
@@ -70,11 +73,11 @@
 						
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a class="image"><img src="https://images.pexels.com/photos/9875445/pexels-photo-9875445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></a>
+									<a class="image"><img src="https://images.pexels.com/photos/2881233/pexels-photo-2881233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Curso de Energía solar fotovoltaica - Coefix</h2>
-										<p>Introducción a la energía solar fotovoltaica: principios de funcionamiento, diseño e instalación de sistemas fotovoltaicos, cálculo de la producción energética y evaluación de la viabilidad económica de proyectos solares.</p>
-										<a href="https://drive.google.com/file/d/14R27kKPBD3tJP0QRWNYDg2QBUybEQCJD/view?usp=drive_link" class="special">Ver certificado</a>
+										<h2 class="major">Curso de introducción a SQL - Kaggle</h2>
+										<p>Manejo básico de bases de datos: creación de consultas, filtrado, agrupación, ordenado y combinación de tablas.</p>
+										<a href="https://www.kaggle.com/learn/certification/ffborgo/intro-to-sql#" class="special">Ver certificado</a>
 									</div>
 								</div>
 							</section>
@@ -82,11 +85,11 @@
 						
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a class="image"><img src="https://images.pexels.com/photos/2881233/pexels-photo-2881233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></a>
+									<a class="image"><img src="https://images.pexels.com/photos/9875445/pexels-photo-9875445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Curso de introducción a SQL - Kaggle</h2>
-										<p>Manejo básico de bases de datos: creación de consultas, filtrado, agrupación, ordenado y combinación de tablas.</p>
-										<a href="https://www.kaggle.com/learn/certification/ffborgo/intro-to-sql#" class="special">Ver certificado</a>
+										<h2 class="major">Curso de Energía solar fotovoltaica - Coefix</h2>
+										<p>Introducción a la energía solar fotovoltaica: principios de funcionamiento, diseño e instalación de sistemas fotovoltaicos, cálculo de la producción energética y evaluación de la viabilidad económica de proyectos solares.</p>
+										<a href="https://drive.google.com/file/d/14R27kKPBD3tJP0QRWNYDg2QBUybEQCJD/view?usp=drive_link" class="special">Ver certificado</a>
 									</div>
 								</div>
 							</section>
@@ -97,7 +100,7 @@
 							<h2 class="major">Más sobre mí</h2>
 							<p>Estoy especialmente interesado en la intersección de la física y el análisis de datos, con el objetivo de aplicar técnicas avanzadas de análisis a la resolución de problemas complejos en el ámbito de la física experimental.</p>
 							<p>Además, tengo un fuerte deseo de formar un instituto que acerque el conocimiento de las ciencias exactas a más personas. Mi objetivo es crear un espacio donde los estudiantes puedan aprender de manera accesible, con seminarios gratuitos y recursos educativos que faciliten su comprensión.</p>
-							<p>Ante cualquier consulta o para explorar posibles colaboraciones, no dudes en contactarme. Siempre estoy dispuesto a intercambiar ideas.</p>
+							<p>Ante cualquier consulta o para explorar posibles colaboraciones, no dudes en contactarme, siempre estoy dispuesto a intercambiar ideas.</p>
 						</div>
 					</section>
 					
@@ -128,5 +131,26 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				async function loadContent() {
+					try {
+						// Cargar la página exp.html
+						const responseExperiencia = await fetch("exp.html");
+						const experienciaHtml = await responseExperiencia.text();
+						const parser = new DOMParser();
+						const experienciaDoc = parser.parseFromString(experienciaHtml, "text/html");
+			
+						// Seleccionar la primera sección de exp.html
+						const experienciaSeccion = experienciaDoc.querySelector("section").outerHTML;
+						document.getElementById("contenedor-experiencia").innerHTML = experienciaSeccion;
+					} catch (error) {
+						console.error("Error al cargar el contenido:", error);
+					}
+				}
+			
+				// Ejecutar el script al cargar la página principal
+				window.onload = loadContent;
+			</script>			
+			
 	</body>
 </html>
