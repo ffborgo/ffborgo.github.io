@@ -4174,3 +4174,18 @@ input, select, textarea {
     object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
 }
 
+/* Asegúrate de que el contenedor sea un contenedor flexible */
+#contenedor-experiencia {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a una nueva línea si el espacio no es suficiente */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos si hay espacio adicional */
+}
+
+/* Estilo para los artículos dentro del contenedor */
+#contenedor-experiencia article {
+    flex: 1 1 calc(50% - 20px); /* Cada artículo ocupa el 50% del ancho del contenedor menos el gap */
+    box-sizing: border-box; /* Incluye el padding y el border en el tamaño del elemento */
+    max-width: 400px; /* Opcional: limita el ancho máximo de los artículos */
+    min-width: 300px; /* Opcional: establece un ancho mínimo */
+}
